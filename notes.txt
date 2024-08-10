@@ -42,7 +42,7 @@ Recently completed (since last push, so put in commit msg):
 
 
 WIWWO: 
-8/9: combined useEffects in League.js
+8/10: making node and react their own files to host
 
 Odds, ends, and reminders
    Using git:
