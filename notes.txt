@@ -1,0 +1,63 @@
+The what (my original idea):
+- A program that scrapes the scores of multiple sports games and gives the link to the closest score. If multiple with same score delta, closest to the end of game or highest in standings
+- It refreshes the scores every [set time period] but when you click "It's a commercial!" it refreshes and takes you to the next game
+
+known errors:
+1 fails to fetch sometimes
+   - actually just occasionally really slow, always loads eventually
+      - every time I try to fix this it stops happening or at least isn't as slow as before 
+         - is this because opening devtools changes how it loads
+   - curious if this happens on my desktop...could be a RAM thing (?)
+      - DOES happen
+
+To do:
+1 switch to sql
+   - map out schema
+2 server.js just calls the scrapes when League.js fetches it, so I tried to find a way to do this w/o having a server,
+   but haven't been able to figure it out
+3 add each sort order to db so there doesn't have to be a time-based league re-render after changing priorities
+   -generally find a way to re-render league after changing priority
+(Evergreen) Document code and check for unneeded parts
+(Evergreen) See if specific errors above still exist and ctrl+f "TODO"
+(Evergreen) Update readme
+(Evergreen/do if any new links show up) Add streaming/other online links
+- Pie in the sky/longterm:   
+   - Add upcoming days
+   - Combine multiple sports 
+      - Would need diffs to be to scale because 3 pt football game != 3 goal hockey game
+      - Or could show the 1st of each sport, then the 2nd of each, and so on
+   - Add favorite teams(?)
+      - Might make sense to wait until adding multiple sports combined
+   - Don't re-scrape ended games to improve efficiency (?)
+   - Host on netlify or simlar (?) 
+      -> Scott said AWS
+      -> Make sure need to configure new IP when changing location only for server, not potential users
+   - Add login for each user's preferences
+   - Let user enter their local streams (?)
+      - if so replace "NBCSP" with this...really NBCSP shouldn't be in the publicly available options
+      - OR basically suggestion box of channels to add
+   - Display standings
+
+Recently completed (since last push, so put in commit msg):
+
+
+WIWWO: 
+8/9: combined useEffects in League.js
+
+Odds, ends, and reminders
+   Using git:
+   1. Make changes to code
+   2. Commit
+   3. Branch -> merge
+   4. Compare and confirm merge/pull
+
+   When using res (like updating cookies) must eventually send res for it to be updated
+
+   When using mongodb from a different location need to configure IP
+
+AWS Things:
+https://www.youtube.com/watch?v=MmidULYvjYE ~10:00 currently
+Done: 
+- install docker on ec2 combined
+Need to do:
+- separate React and Nodejs parts of program
