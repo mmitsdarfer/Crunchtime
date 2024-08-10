@@ -43,7 +43,7 @@ Recently completed (since last push, so put in commit msg):
 
 WIWWO: 
 8/10: making node and react their own files to host
-   -added docker and yml
+   -added docker and yml and secrets
 
 Odds, ends, and reminders
    Using git:
