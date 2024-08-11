@@ -42,7 +42,8 @@ Recently completed (since last push, so put in commit msg):
 
 
 WIWWO: 
-8/9: combined useEffects in League.js
+8/10: hosting - got rid of server and port 8000...next is going back to aws and seeing if that helps
+                  -> after bringing changes into ct-node-new and ct-client-new
 
 Odds, ends, and reminders
    Using git:

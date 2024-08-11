@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import * as Realm from 'realm-web';
 
 const app = new Realm.App({id: 'application-0-ejwdagr'});
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 const baseUrl = `http://localhost:${PORT}`;
 
 var fullNets = [['TNT', 'https://www.tntdrama.com/watchtnt/east'], ['ESPN+', 'https://www.espn.com/watch/'], ['FOX', 'https://www.foxsports.com/live'],
@@ -78,8 +78,10 @@ export default function League({league, logoData}){
         loadLeague();
 
         //fetches the server which calls the scrape function, updates db, etc.
-        fetch('/'+league)
-        .then((data) => console.log(data.message));  
+        fetch(`${baseUrl}/league/${league}`)
+    
+        
+       // console.log(`${baseUrl}/league`)
     }, [league]);
 
     function Priority(){

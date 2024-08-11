@@ -5,10 +5,9 @@ import mlb from './routes/mlb.js';
 import nhl from './routes/nhl.js';
 import nfl from './routes/nfl.js';
 import nba from './routes/nba.js';
+import leagueRoute from './routes/league.js';
 import preferences from './routes/preferences.js';
 import standings from './routes/standings.js';
-import dotenv from "dotenv";
-dotenv.config();
 
 const PORT = 5000;
 const app = express();
@@ -23,6 +22,7 @@ app.use('/nfl', nfl);
 app.use('/nba', nba);
 app.use('/preferences', preferences);
 app.use('/standings', standings);
+app.use('/league', leagueRoute);
 
 // Global error handling
 app.use((err, _req, res, next) => {
