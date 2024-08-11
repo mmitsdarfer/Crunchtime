@@ -13,9 +13,7 @@ known errors:
 To do:
 1 switch to sql
    - map out schema
-2 server.js just calls the scrapes when League.js fetches it, so I tried to find a way to do this w/o having a server,
-   but haven't been able to figure it out
-3 add each sort order to db so there doesn't have to be a time-based league re-render after changing priorities
+2 add each sort order to db so there doesn't have to be a time-based league re-render after changing priorities
    -generally find a way to re-render league after changing priority
 (Evergreen) Document code and check for unneeded parts
 (Evergreen) See if specific errors above still exist and ctrl+f "TODO"
