@@ -9,6 +9,8 @@ known errors:
          - is this because opening devtools changes how it loads
    - curious if this happens on my desktop...could be a RAM thing (?)
       - DOES happen
+2 constantly re-rendering again? inspect makes it flicker
+3 Phillies on regular ESPN shouldn't use NBCSP
 
 To do:
 1 switch to sql

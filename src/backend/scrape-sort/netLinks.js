@@ -5,7 +5,6 @@ export default function netLinks(nets, teams, progress, numGames, links, league,
     const locTeams = ['Flyers', 'Phillies', '76ers'];
     const channels = [];
     let notPlus = 0; //need non-ESPN+ links since I can get specific games just for ESPN+
-
     function localStream(i){
         for(let j = 0; j < locTeams.length; j++){
             if((locTeams[j] === teams[i*2] || locTeams[j] === teams[i*2+1]) && !(nets[j] === 'ABC' || nets[j] === 'TNT' || nets[j] === 'FOX')){ 
