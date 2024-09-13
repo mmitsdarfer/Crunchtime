@@ -11,6 +11,8 @@ known errors:
       - DOES happen
 2 constantly re-rendering again? inspect makes it flicker
 3 Phillies on regular ESPN shouldn't use NBCSP
+4 NFL shows whole week of scores, so need to adjust scores so it drops to proper game after 
+   (Thursday score after Thursday game is in wrong place)
 
 To do:
 1 switch to sql
@@ -42,8 +44,7 @@ Recently completed (since last push, so put in commit msg):
 
 
 WIWWO: 
-8/10: hosting - got rid of server and port 8000...next is going back to aws and seeing if that helps
-                  -> after bringing changes into ct-node-new and ct-client-new
+9/13: new branch to fix NFL scores in wrong places, also want to make NFL show "week of [date]" instead of 1st day of week's games
 
 Odds, ends, and reminders
    Using git:
