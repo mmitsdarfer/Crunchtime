@@ -44,7 +44,9 @@ Recently completed (since last push, so put in commit msg):
 
 
 WIWWO: 
-9/13: new branch to fix NFL scores in wrong places, also want to make NFL show "week of [date]" instead of 1st day of week's games
+9/13: new branch to fix NFL scores in wrong places
+9/14: not showing complete Thursday game, but putting its score on another game
+   - want to fix re-rendering issue first
 
 Odds, ends, and reminders
    Using git:

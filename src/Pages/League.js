@@ -71,8 +71,10 @@ export default function League({league, logoData}){
             .catch(err => {console.log(`Failed to load ${league} data`)});
             setLen(loadLeague[0].sorted.length);
             setLeagueData(loadLeague[loadLeague.length-1]);
+            console.log('test')
             let date = new Date(loadLeague[loadLeague.length-1].leagueDate);
             date = date.toLocaleString('default', { day: 'numeric', month: 'long', year: 'numeric'});
+            if(league === 'NFL') date = 'Week of ' + date;
             setDate(date)
         }
         loadLeague();
@@ -202,35 +204,38 @@ export default function League({league, logoData}){
         function FullLeague(){
             return(
                 <div>
-                <div id="date">
-                        <h2>{date}</h2>
-                </div>
-                <div id='league-row'>
-                    <div className='league-column'>
-                        <h3>
-                            <Col colVal={0}></Col>
-                        </h3>
+                    <div id="date">
+                            <h2>{date}</h2>
                     </div>
-                    <div className="league-column" id="alt-column">
-                        <h3>
-                        <Col colVal={1}></Col>
-                        </h3>
-                    </div>
-                    <div className='league-column'>
-                        <h3>
-                            <Col colVal={2}></Col>
-                        </h3>
-                    </div>
-                    <div className="league-column" id="alt-column">
-                        <h3>
-                        <Col colVal={3}></Col>
-                        </h3>
-                    </div>
-                </div> 
+                    <div id='league-row'>
+                        <div className='league-column'>
+                            <h3>
+                                <Col colVal={0}></Col>
+                            </h3>
+                        </div>
+                        <div className="league-column" id="alt-column">
+                            <h3>
+                            <Col colVal={1}></Col>
+                            </h3>
+                        </div>
+                        <div className='league-column'>
+                            <h3>
+                                <Col colVal={2}></Col>
+                            </h3>
+                        </div>
+                        <div className="league-column" id="alt-column">
+                            <h3>
+                            <Col colVal={3}></Col>
+                            </h3>
+                        </div>
+                    </div> 
                 </div>
             )
-        }
-        function Loaded(){
+        };
+
+        /*THIS WAS CAUSING INFINITE RENDERS
+        BUT NOW IT NEVER RE-RENDERS. GOTTA FIND A WAY TO BRING THIS BACK W/O CONSTANTLY TRIGGERING
+        function Loaded(){  
             useEffect(() => {
                 if(events.length > 0){
                 //gets league score data from db
@@ -240,16 +245,17 @@ export default function League({league, logoData}){
                     .then(resp => resp.json())
                     .catch(err => {console.log(`Failed to load ${league} data`)});
                     setLen(loadLeague[0].sorted.length);
-                    setLeagueData(loadLeague[loadLeague.length-1]);
+                   // setLeagueData(loadLeague[loadLeague.length-1]);
                     let date = new Date(loadLeague[loadLeague.length-1].leagueDate);
                     date = date.toLocaleString('default', { day: 'numeric', month: 'long', year: 'numeric'});
+                    if(league === 'NFL') date = 'Week of ' + date;
                     setDate(date)
                 }
                 loadLeague();
                 }
-            }, []);  
+            }, []); 
             return <FullLeague></FullLeague> 
-        }
+        }*/
 
         return(
             <div>        
@@ -262,7 +268,7 @@ export default function League({league, logoData}){
                     </a>
                 </div>
                 <h2>Click the league logo to refresh scores</h2>
-                <Loaded></Loaded>
+                <FullLeague></FullLeague>
                 <Priority></Priority>  
             </div>
         )

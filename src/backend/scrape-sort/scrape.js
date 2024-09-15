@@ -96,9 +96,10 @@ var scrape = async function scrape(league, priority, availNets){
 
         return [fullDate, teamArr, timeArr, scoreArr, nets, numGames, linkArr, logos];
     }, league);
+    console.log(teams);
 
     //date with day of the week stripped off
-    let i = 0;
+    let i = 0;;
     for(i; i < fullDate.length; i++){
         if(fullDate[i] == ','){
           break;
