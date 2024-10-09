@@ -19,6 +19,8 @@ To do:
    - map out schema
 2 add each sort order to db so there doesn't have to be a time-based league re-render after changing priorities
    -generally find a way to re-render league after changing priority
+3 wait to load home and /preferences until leagues are gathered so user doesn't see leagues change order
+4 playoff mlb games are on espn+ but the specific games aren't used in links
 (Evergreen) Document code and check for unneeded parts
 (Evergreen) See if specific errors above still exist and ctrl+f "TODO"
 (Evergreen) Update readme
