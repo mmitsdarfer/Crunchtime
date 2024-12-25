@@ -12,7 +12,7 @@ var fullNets = [['TNT', 'https://www.tntdrama.com/watchtnt/east'], ['ESPN+', 'ht
 ['NBC', 'https://www.nbc.com/live?brand=nbc'],
 ['AppleTV+', 'https://tv.apple.com/us/room/apple-tv-major-league-baseball/edt.item.62327df1-6874-470e-98b2-a5bbeac509a2'],
 ['TBS', 'https://www.tbs.com/watchtbs/east'], ['FS1', 'https://www.foxsports.com/live/fs1'], ['MLB Network', 'https://www.mlb.com/network/live?success=true'],
-['MLBTV', 'https://www.mlb.com/tv'], ['NBA TV', 'https://www.nba.com/watch/nba-tv'],
+['MLBTV', 'https://www.mlb.com/tv'], ['NBA TV', 'https://www.nba.com/watch/nba-tv'], ['Prime Video', 'https://www.amazon.com/salp/tnf'],
 ['NBCSP', 'https://www.nbc.com/live?brand=rsn-philadelphia&callsign=nbcsphiladelphia']];
 
 function makeCapital(lower){
@@ -28,7 +28,7 @@ export default function League({league, logoData}){
     const USER = 'mikeymits'; //TODO: replace with login
 
     const [priority, setPriority] = useState(['times', 'diffs', 'stands']);
-    const [streams, setStreams] = useState(["TNT","ESPN+","FOX","ABC","NBC","CBS","AppleTV+","TBS","FS1","MLB Network","MLBTV","NBATV","NBCSP"]);
+    const [streams, setStreams] = useState(["TNT","ESPN+","FOX","ABC","NBC","CBS","AppleTV+","TBS","FS1","MLB Network","MLBTV","NBATV","Prime Video", "NBCSP"]);
     const [take, setTake] = useState(false);
     const [date, setDate] = useState('Dec 21 2000');
     

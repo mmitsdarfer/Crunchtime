@@ -13,8 +13,13 @@ known errors:
 3 Phillies on regular ESPN shouldn't use NBCSP
 4 NFL shows whole week of scores, so need to adjust scores so it drops to proper game after 
    (Thursday score after Thursday game is in wrong place)
+5 Different zoom in levels misalign scores
+6 wrong date [need to add +1 somewhere]
+7 Back to not picking up specific ESPN+ streams 
 
 To do:
+-1: update body-parser (has vulnerability) and see if that breaks other dependencies 
+0 add prime video https://www.amazon.com/salp/tnf and max
 1 switch to sql
    - map out schema
 2 add each sort order to db so there doesn't have to be a time-based league re-render after changing priorities

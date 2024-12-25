@@ -10,10 +10,13 @@ const nets = [
     ['NBA TV', 'https://www.nba.com/watch/nba-tv'],
     ['NBC', 'https://www.nbc.com/live?brand=nbc'],
     ['Peacock', 'https://www.peacocktv.com/'],
+    ['Prime Video', 'https://www.amazon.com/salp/tnf'],
     ['TBS', 'https://www.tbs.com/watchtbs/east'],
     ['TNT', 'https://www.tntdrama.com/watchtnt/east'],
     ['NBCSP', 'https://www.nbc.com/live?brand=rsn-philadelphia&callsign=nbcsphiladelphia']
 ];
+
+//add here then to netLinks.js and League.js
 
 export default nets;
 

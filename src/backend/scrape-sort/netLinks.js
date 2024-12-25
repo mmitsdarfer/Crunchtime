@@ -83,6 +83,13 @@ export default function netLinks(nets, teams, progress, numGames, links, league,
                 else channels[i] = '/stream';
                 notPlus++;
             }
+            else if(nets[i] === 'Prime Video'){
+                if(availNets.find(chan => chan[0] === nets[i]) !== undefined){
+                    channels[i] = streamLinks.find(chan => chan[0] === nets[i])[1];
+                }
+                else channels[i] = '/stream';
+                notPlus++;
+            }
             else if(nets[i] === 'Apple TV+'){
                 if(!localStream(i)){
                     if(availNets.find(chan => chan[0] === nets[i]) !== undefined){
