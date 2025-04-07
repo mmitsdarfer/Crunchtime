@@ -23,8 +23,6 @@ export default function League({league, logoData}){
     document.title = 'Crunch Time: ' + league;
     const navigate = useNavigate();
 
-
-
     const USER = 'mikeymits'; //TODO: replace with login
 
     const [priority, setPriority] = useState(['times', 'diffs', 'stands']);
@@ -51,6 +49,7 @@ export default function League({league, logoData}){
     const [events, setEvents] = useState([]);
     const [leagueData, setLeagueData] = useState();
     const [len, setLen] = useState(0);  
+
     useEffect(() => {
         const  login = async () => {
             // Connect to db so changes cause page to re-render
@@ -61,6 +60,7 @@ export default function League({league, logoData}){
             for  await (const  change  of  collection.watch()) {
                 setEvents(events  => [...events, change]);
             }
+            
         }
         login();
 
@@ -71,7 +71,6 @@ export default function League({league, logoData}){
             .catch(err => {console.log(`Failed to load ${league} data`)});
             setLen(loadLeague[0].sorted.length);
             setLeagueData(loadLeague[loadLeague.length-1]);
-            console.log('test')
             let date = new Date(loadLeague[loadLeague.length-1].leagueDate);
             date = date.toLocaleString('default', { day: 'numeric', month: 'long', year: 'numeric'});
             if(league === 'NFL') date = 'Week of ' + date;
@@ -80,10 +79,13 @@ export default function League({league, logoData}){
         loadLeague();
 
         //fetches the server which calls the scrape function, updates db, etc.
-        fetch(`${baseUrl}/league/${league}`)
+        async function updated(){
+            await fetch(`${baseUrl}/league/${league}`)
+            .then(resp => resp.json())
+            .catch(err => {console.log(`Failed to load ${league} data`)});
+        }
+        updated();
     
-        
-       // console.log(`${baseUrl}/league`)
     }, [league]);
 
     function Priority(){
